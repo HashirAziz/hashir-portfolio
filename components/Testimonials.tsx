@@ -103,7 +103,7 @@ function FiverrBadge() {
           fontSize: "0.78rem",
           fontWeight: 900,
           letterSpacing: "-0.02em",
-          color: "#404145",
+          color: "#fff",
           fontFamily: "Arial, Helvetica, sans-serif",
         }}
       >
