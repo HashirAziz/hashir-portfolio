@@ -59,7 +59,7 @@ const PROJECTS = [
     category: "DATA ANALYTICS · LLM",
     cardBg: "#0f172a",
     titleColor: "#f5f0eb",
-    accentColor: "#3b82f6",  // Blue
+    accentColor: "#3b82f6",
     textColor: "#fff",
     desc: "AI-powered data analysis platform that lets users chat with CSV files using natural language. Generates instant insights, advanced visualizations (heatmaps, sunburst, Sankey diagrams), and automated reports powered by OpenAI GPT-4o.",
     tags: ["OPENAI GPT-4O","STREAMLIT","PANDAS","PLOTLY","PYTHON","DATA VISUALIZATION"],
@@ -174,6 +174,8 @@ function ProjectCard({ p }: { p: typeof PROJECTS[0] }) {
       flexDirection: "column",
       border: `1px solid ${borderColor}`,
       transition: "transform 0.25s, box-shadow 0.25s",
+      width: "100%",
+      boxSizing: "border-box",
     }}
       onMouseEnter={e => {
         (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
@@ -198,7 +200,14 @@ function ProjectCard({ p }: { p: typeof PROJECTS[0] }) {
           fontSize:"clamp(1.2rem,2vw,1.55rem)", fontWeight:900,
           color: p.titleColor, letterSpacing:"-0.02em",
           lineHeight:1.1, marginBottom:"0.3rem",
+          wordBreak: "break-word",
         }}>{p.title}</h3>
+
+        <p style={{
+          fontSize:"0.78rem", fontWeight:600,
+          color: descColor, letterSpacing:"0.01em",
+          marginBottom:"0.5rem", lineHeight:1.4,
+        }}>{p.subtitle}</p>
 
         <p style={{ fontSize:"0.72rem", fontWeight:700, color: p.accentColor === "#fff" ? (isLight ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.7)") : p.accentColor, letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:"1rem" }}>
           {p.badge}
@@ -285,7 +294,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:"1.25rem" }}>
+        <div className="projects-grid">
           {visible.map(p => <ProjectCard key={p.title} p={p} />)}
         </div>
 
@@ -360,11 +369,20 @@ export default function Projects() {
       </div>
 
       <style>{`
-        @media(max-width:768px){
-          #projects > div > div:nth-child(3){ grid-template-columns:1fr !important; }
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.25rem;
         }
-        @media(max-width:1024px){
-          #projects > div > div:nth-child(3){ grid-template-columns:1fr 1fr !important; }
+        @media (max-width: 1024px) {
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 640px) {
+          .projects-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </section>
