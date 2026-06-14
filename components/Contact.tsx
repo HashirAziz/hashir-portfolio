@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 // SVG icons — exact brand icons
 function EmailIcon() {
@@ -29,10 +30,46 @@ function MessageIcon() {
   );
 }
 
+function CalendarIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </svg>
+  );
+}
+
+// IMPORTANT: Replace "your-username/30min" with your actual Cal.com event link
+// e.g. if your Cal.com username is "hashiraziz" and event is "intro-call",
+// it would be "hashiraziz/intro-call"
+const CAL_LINK = "https://cal.com/hashir-aziz-bi7t3z/30min";
+
 export default function Contact() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ name:"", email:"", message:"" });
   const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        theme: "dark",
+        styles: { branding: { brandColor: "#f97316" } },
+      });
+    })();
+  }, []);
+
+  const openCal = () => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("modal", {
+        calLink: CAL_LINK,
+        config: { theme: "dark" },
+      });
+    })();
+  };
 
   const send = () => {
     if (!form.name || !form.email || !form.message) return;
@@ -65,8 +102,23 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* 3 horizontal contact cards */}
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:"1.25rem", maxWidth:900, margin:"0 auto 3rem" }}>
+        {/* 4 horizontal contact cards */}
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(4, 1fr)", gap:"1.25rem", maxWidth:1000, margin:"0 auto 3rem" }}>
+
+          {/* Book a Call (Cal.com) */}
+          <div className="contact-card" onClick={openCal} style={{ cursor:"pointer" }}>
+            <div style={{
+              width:42, height:42, borderRadius:10,
+              background:"rgba(249,115,22,0.12)", border:"1px solid rgba(249,115,22,0.25)",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              color:"var(--accent)", marginBottom:"0.5rem",
+            }}>
+              <CalendarIcon />
+            </div>
+            <p style={{ fontWeight:800, fontSize:"1rem" }}>Book a Call</p>
+            <p style={{ color:"var(--text2)", fontSize:"0.82rem" }}>Schedule a free 30-min intro</p>
+            <p style={{ color:"var(--accent)", fontSize:"0.8rem", fontWeight:700, marginTop:"0.5rem" }}>Pick a time ↗</p>
+          </div>
 
           {/* Email Me */}
           <a href="mailto:hashiraziz999@gmail.com" className="contact-card" style={{ textDecoration:"none", color:"inherit" }}>
@@ -182,7 +234,10 @@ export default function Contact() {
 
       <style>{`
         @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-        @media(max-width:768px){
+        @media(max-width:1024px){
+          #contact > div > div:nth-child(2){ grid-template-columns:repeat(2,1fr) !important; }
+        }
+        @media(max-width:600px){
           #contact > div > div:nth-child(2){ grid-template-columns:1fr !important; }
         }
       `}</style>

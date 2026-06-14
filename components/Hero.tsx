@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 
 const ROLES = [
   "AI AUTOMATION ENGINEER.",
-  "AI ENGINEER.",
-  "MACHINE / DEEP LEARNING ENGINEER.",
-  "COMPUTER VISION ENGINEER.",
+  "AI/ML ENGINEER.",
+  
 ];
 
 const TICKER = [
