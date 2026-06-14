@@ -33,14 +33,11 @@ function CircularBadge() {
             d={`M ${cx},${cy} m -${r},0 a ${r},${r} 0 1,1 ${r * 2},0 a ${r},${r} 0 1,1 -${r * 2},0`}
           />
         </defs>
-        {/* Single subtle inner ring only */}
         <circle cx={cx} cy={cy} r={r - 4} fill="none" stroke="rgba(249,115,22,0.25)" strokeWidth="1" strokeDasharray="3 4" />
-        {/* Visible orange spinning text */}
         <text style={{ fontSize: "10.5px", fontWeight: 800, letterSpacing: "0.16em", fill: "#f97316", fontFamily: "system-ui" }}>
           <textPath href="#textCircle">{text}</textPath>
         </text>
       </svg>
-      {/* Center: star + short quote */}
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         transform: "translate(-50%,-50%)",
@@ -93,12 +90,10 @@ export default function Hero() {
       position: "relative", overflow: "hidden",
     }}>
 
-      {/* Circular badge top right */}
       <div className="hide-sm" style={{ position: "absolute", top: "5rem", right: "3rem", zIndex: 2 }}>
         <CircularBadge />
       </div>
 
-      {/* 10+ Projects pill */}
       <div className="hide-sm" style={{
         position: "absolute", top: "14rem", right: "1.5rem", zIndex: 2,
         background: "var(--bg2)", border: "1px solid var(--border2)",
@@ -110,17 +105,14 @@ export default function Hero() {
         20+ Projects
       </div>
 
-      {/* Main content */}
       <div style={{
         flex: 1, display: "flex", alignItems: "center",
         maxWidth: 1200, margin: "0 auto", padding: "0 2rem",
         width: "100%", paddingTop: "6rem",
       }}>
 
-        {/* LEFT */}
         <div style={{ flex: 1, maxWidth: 720 }}>
 
-          {/* OPEN FOR WORK */}
           <div className="fade-up-1" style={{
             display: "inline-flex", alignItems: "center", gap: 8, marginBottom: "2rem",
             background: "var(--bg3)", border: "1px solid rgba(74,222,128,0.3)",
@@ -133,7 +125,6 @@ export default function Hero() {
             }}>Open for work</span>
           </div>
 
-          {/* HI I AM — white dotted outlined */}
           <div className="fade-up-1" style={{
             fontSize: "clamp(2.2rem,7vw,5.5rem)",
             fontWeight: 900,
@@ -146,7 +137,6 @@ export default function Hero() {
             HI I AM
           </div>
 
-          {/* Typewriter */}
           <div className="fade-up-2" style={{
             fontSize: "clamp(2.8rem,7vw,5.5rem)",
             fontWeight: 900,
@@ -160,15 +150,13 @@ export default function Hero() {
             <span className="blink" style={{ color: "var(--accent)", fontWeight: 300, fontSize: "0.8em" }}>|</span>
           </div>
 
-          {/* Resume pill */}
           <div className="fade-up-3" style={{ marginBottom: "1.75rem" }}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-shine-btn">
+            <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-shine-btn">
               <span className="resume-shine-overlay" />
               VIEW RESUME ↗
             </a>
           </div>
 
-          {/* Tagline */}
           <p className="fade-up-4" style={{ color: "var(--text2)", fontSize: "0.97rem", lineHeight: 1.8, maxWidth: 520 }}>
             <span style={{ color: "var(--accent)", fontWeight: 700 }}>•</span>{" "}
             <strong style={{ color: "var(--text)", fontWeight: 700 }}>AI Automation Engineer & Full-Stack AI Builder.</strong>{" "}
@@ -176,12 +164,10 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* RIGHT: photo */}
         <div className="fade-up-3 hide-sm" style={{
           display: "flex", flexDirection: "column", alignItems: "center",
           marginLeft: "3rem", flexShrink: 0, position: "relative",
         }}>
-          {/* Label + dotted arrow */}
           <div style={{ position: "relative", alignSelf: "flex-end", marginRight: "1rem", marginBottom: "0.5rem" }}>
             <p style={{
               color: "#ffffff", fontSize: "0.82rem", fontWeight: 600,
@@ -196,7 +182,6 @@ export default function Hero() {
             </svg>
           </div>
 
-          {/* Rectangular photo */}
           <div style={{
             width: 200, height: 255, borderRadius: 18,
             border: "2.5px solid var(--accent)",
@@ -214,7 +199,6 @@ export default function Hero() {
 
       </div>
 
-      {/* Scroll indicator */}
       <div style={{
         display: "flex", flexDirection: "column", alignItems: "center",
         gap: 6, padding: "1.5rem",
@@ -225,7 +209,6 @@ export default function Hero() {
         <div style={{ fontSize: "1rem", color: "var(--accent)" }}>↓</div>
       </div>
 
-      {/* Ticker */}
       <div style={{
         borderTop: "1px solid var(--border)", background: "var(--bg2)",
         padding: "0.7rem 0", overflow: "hidden",
