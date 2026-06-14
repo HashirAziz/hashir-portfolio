@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://your-domain.com"; // 👈 replace with your actual deployed URL
+const SITE_URL = "https://hashir-portfolio-brown.vercel.app";
 
 export const metadata: Metadata = {
   title: "Hashir Aziz — AI Automation Engineer",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Hashir Aziz Portfolio",
     images: [
       {
-        url: "/og-image.png", // 👈 place a 1200x630 image in /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hashir Aziz — AI Automation Engineer",
