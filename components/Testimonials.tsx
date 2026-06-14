@@ -273,7 +273,7 @@ export default function Testimonials() {
           <p style={{ fontWeight: 800, fontSize: "0.95rem", marginBottom: "0.5rem", color: "var(--text)" }}>
             AI &amp; Automation Project Testimonials
           </p>
-          <p style={{ color: "var(--text3)", fontSize: "0.85rem", lineHeight: 1.6 }}>
+          <p style={{ color: "#FFFFFF", fontSize: "0.85rem", lineHeight: 1.6 }}>
             I&apos;m actively taking on AI automation, LLM, RAG, and voice AI projects.
             Client testimonials for this domain will be added here as projects are completed —
             check back soon, or{" "}
