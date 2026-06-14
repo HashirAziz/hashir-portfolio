@@ -13,7 +13,7 @@
   --text2: #a09080;
   --text3: #605040;
   --card: #111111;
-  --grid-color: rgba(255,255,255,0.03);
+  --grid-color: rgba(255,255,255,0.06);
 }
 
 /* ── LIGHT MODE ── */
@@ -29,7 +29,7 @@ html.light {
   --text2: #6b5a48;
   --text3: #9c8a78;
   --card: #f5f1ed;
-  --grid-color: rgba(0,0,0,0.04);
+  --grid-color: rgba(0,0,0,0.0.7);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -231,7 +231,7 @@ body {
 }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Resume pill button (like Fatima's) */
+/* Resume pill button */
 .resume-pill {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: #fff;

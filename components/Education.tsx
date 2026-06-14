@@ -17,7 +17,7 @@ const EDU = [
 
 export default function Education() {
   return (
-    <section id="education" className="grid-bg" style={{ padding:"7rem 2rem", background:"var(--bg2)" }}>
+    <section id="education" className="grid-bg" style={{ padding:"7rem 2rem", backgroundColor:"var(--bg2)" }}>
       <div style={{ maxWidth:900, margin:"0 auto" }}>
 
         <div style={{ textAlign:"center", marginBottom:"4rem" }}>

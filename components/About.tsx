@@ -31,7 +31,7 @@ const BOT_ROW = [SKILL_GROUPS[2], SKILL_GROUPS[3], SKILL_GROUPS[4]]; // Framewor
 
 export default function About() {
   return (
-    <section id="about" className="grid-bg" style={{ padding:"7rem 2rem", background:"var(--bg)" }}>
+    <section id="about" className="grid-bg" style={{ padding:"7rem 2rem", backgroundColor:"var(--bg)" }}>
       <div style={{ maxWidth:1100, margin:"0 auto" }}>
 
         {/* Centered heading */}
@@ -72,7 +72,7 @@ export default function About() {
             <p style={{ color:"var(--text2)", lineHeight:1.85, marginBottom:"1rem", fontSize:"0.97rem" }}>
               My core focus lies in engineering <strong style={{ color:"var(--text)" }}>LLM agents</strong>, developing
               end-to-end <strong style={{ color:"var(--text)" }}>RAG pipelines</strong>, building production-grade
-              <strong style={{ color:"var(--text)" }}> voice bots</strong>, and architecting full-stack AI applications
+              <strong style={{ color:"var(--text)" }}> voice bots</strong>, and architecting full-stack AI applications and n8n workflows
               that deliver meaningful real-world impact.
             </p>
             <p style={{ color:"var(--text2)", lineHeight:1.85, fontSize:"0.97rem" }}>

@@ -33,7 +33,7 @@ const EXP = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="grid-bg" style={{ padding:"7rem 2rem", background:"var(--bg)" }}>
+    <section id="experience" className="grid-bg" style={{ padding:"7rem 2rem", backgroundColor:"var(--bg)" }}>
       <div style={{ maxWidth:900, margin:"0 auto" }}>
 
         {/* Centered heading */}
